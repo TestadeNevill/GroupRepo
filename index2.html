@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Simple Map</title>
+    <script src="scripts.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpTc5kGPp1YI4pIz6-fcbaLfUpVbC6xfY&callback=initMap&libraries=&v=weekly"
@@ -66,9 +67,9 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li><button type="button" class="btn btn-success" id="Omar" style='margin-right:16px'>Omar</button></li>
-        <li><button type="button" class="btn btn-success" id="Wayil" style='margin-right:16px'>Wayil</button></li>
-        <li><button type="button" class="btn btn-success" id="Datesta" style='margin-right:16px'>Datesta</button></li>
+        <li><button type="button" class="btn btn-success" id="Omar" onclick="myFunction()" style='margin-right:16px'>Omar</button></li>
+        <li><button type="button" class="btn btn-success" id="Wayil" onclick="myFunction()" style='margin-right:16px'>Wayil</button></li>
+        <li><button type="button" class="btn btn-success" id="Datesta" onclick="myFunction()" style='margin-right:16px'>Datesta</button></li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
