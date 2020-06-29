@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Simple Map</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
@@ -67,9 +68,18 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li><button type="button" class="btn btn-success" id="Omar" onclick="myFunction()" style='margin-right:16px'>Omar</button></li>
-        <li><button type="button" class="btn btn-success" id="Wayil" onclick="myFunction()" style='margin-right:16px'>Wayil</button></li>
-        <li><button type="button" class="btn btn-success" id="Datesta" onclick="myFunction()" style='margin-right:16px'>Datesta</button></li>
+        <li><button type="button" class="btn btn-success" id="Omar" style='margin-right:16px'>Omar</button></li>
+        <li><button type="button" class="btn btn-success" id="Wayil" style='margin-right:16px'>Wayil</button></li>
+        <li><button type="button" class="btn btn-success" id="Datesta" style='margin-right:16px'>Datesta</button></li>
+        <li>
+          <script>
+            function ZoomAndCenter() {
+              map.setCenter(new google.maps.LatLng(-34.397, 150.644));
+              map.setZoom(15);
+            }
+            </script>
+            <a href="javascript:ZoomAndCenter()">Move to location</a>
+        </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

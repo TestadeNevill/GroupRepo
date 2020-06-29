@@ -2,21 +2,27 @@
 var lat: =
 var long: =
 */
+$(document).ready(function() {
 
-console.log("Omar Button Clicked");
-var button = document.getElementById("Omar");
-button.addEventListener("click", function() {
-    alert("Hi you clicked Omar's Button!");
-});
-
-console.log("Wayil Button Clicked");
-var button = document.getElementById("Wayil");
-button.addEventListener("click", function() {
-    alert("Hi you clicked Wayil's Button!");
-});
-
-console.log("Datesta Button Clicked");
-var button = document.getElementById("Datesta");
-button.addEventListener("click", function() {
-    alert("Hi you clicked Datesta's Button!");
+    
+    var OmarButton = document.getElementById("Omar");
+    console.log(OmarButton);
+    OmarButton.addEventListener("click", function() {
+        console.log("Omar Button Clicked");
+        alert("Hi you clicked Omar's Button!");
+    });  
+   
+    var WayilButton = document.getElementById("Wayil");
+    console.log(WayilButton);
+    WayilButton.addEventListener("click", function() {
+        console.log("Wayil Button Clicked");
+        alert("Hi you clicked Wayil's Button!");
+    });
+    
+    var DatestaButton = document.getElementById("Datesta");
+    console.log(DatestaButton);
+    DatestaButton.addEventListener("click", function() {
+        console.log("Datesta Button Clicked");
+        alert("Hi you clicked Datesta's Button!");
+    });
 });
