@@ -10,8 +10,8 @@ $(document).ready(function() {
     OmarButton.addEventListener("click", function() {
         console.log("Omar Button Clicked");
         alert("Hi you clicked Omar's Button!");
-        map.setCenter(new google.maps.LatLng(41.0410259, -73.5543941));
-        map.setZoom(10);
+        map.setCenter(new google.maps.LatLng(41.0382745, -73.5464977));
+        map.setZoom(15);
     });  
    
     var WayilButton = document.getElementById("Wayil");
