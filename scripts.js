@@ -4,7 +4,7 @@ var long: =
 */
 $(document).ready(function() {
 
-    
+    //Omars Button (Add dropdown menu)
     var OmarButton = document.getElementById("Omar");
     console.log(OmarButton);
     OmarButton.addEventListener("click", function() {
@@ -14,6 +14,7 @@ $(document).ready(function() {
         map.setZoom(15);
     });  
    
+    //Wayils Button (Add dropdown menu)
     var WayilButton = document.getElementById("Wayil");
     console.log(WayilButton);
     WayilButton.addEventListener("click", function() {
@@ -23,6 +24,7 @@ $(document).ready(function() {
         map.setZoom(15);
     });
     
+    //Datesta's Button (Add dropdown menu)
     var DatestaButton = document.getElementById("Datesta");
     console.log(DatestaButton);
     DatestaButton.addEventListener("click", function() {
