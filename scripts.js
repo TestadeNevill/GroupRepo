@@ -30,7 +30,7 @@ $(document).ready(function() {
     DatestaButton.addEventListener("click", function() {
         console.log("Datesta Button Clicked");
         alert("Hi you clicked Datesta's Button!");
-        map.setCenter(new google.maps.LatLng(-34.397, 150.644));
+        map.setCenter(new google.maps.LatLng(-41.1792, 73.1894));
         map.setZoom(15);
     });
 });
