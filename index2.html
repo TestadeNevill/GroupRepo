@@ -41,6 +41,8 @@
           });
         }
 */
+
+        // INIT MAP (Your starting point on the map.)
         function initMap() {
           exports.map = new google.maps.Map(document.getElementById("map"), {
             center: {
@@ -68,28 +70,38 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
+        <!--NavBar Buttions Start-->
         <li><button type="button" class="btn btn-success" id="Omar" style='margin-right:16px'>Omar</button></li>
         <li><button type="button" class="btn btn-success" id="Wayil" style='margin-right:16px'>Wayil</button></li>
         <li><button type="button" class="btn btn-success" id="Datesta" style='margin-right:16px'>Datesta</button></li>
         <li>
+          <!--For Debugging Only Comment out.-->
           <script>
+            /*
             function ZoomAndCenter() {
               map.setCenter(new google.maps.LatLng(-34.397, 150.644));
               map.setZoom(15);
             }
+            */
             </script>
-            <a href="javascript:ZoomAndCenter()">Move to location</a>
+            <!--DEBUG BUTTON-->
+            <!--<a href="javascript:ZoomAndCenter()">Move to location</a>-->
         </li>
+        <!--Add more here in the future-->
+        <!--Dynamic Text Title-->
+        <h2 id="dynamic-title">Favorite Spots!</h2>
       </ul>
+      <!--Search Bar START-->
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
+      <!--Search Bar END-->
     </div>
   </nav>
   <!--NavBar END-->
 
-
+<!--The Map Itself-->
 <div id="map"></div>
 
 
