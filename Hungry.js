@@ -17,53 +17,73 @@ function getRestaurants(location) {
     var pyrmont = new google.maps.LatLng(location.lat,location.long);
     var request = {
         location: pyrmont,
-        radius: '1500',
+        radius: 6000,
         type: ['restaurant']
     };
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, callback);
 }
-
+ 
 function callback (results, status) {
-    console.log(results)
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-        for (var i=0; i > results.length; i++)
+        for (var i=0; i < results.length; i++)
         var place = results[i];
-        var price = createPrice(place.price_level);
-        let content = `<h3>${place.name}</h3>
-        <h4>${place.vicinity}</h4>
-        <p>Price: ${price}<br/> 
-        Rating: ${place.rating}`;
-
+        let restaurantInfo = `<h3>${place.name}</h3>
+        <h4> Address: ${place.vicinity} </h4>
+        <h2> Rating: ${place.rating} </h2>`;
+        
         var marker = new google.maps.Marker({
             position: place.geometry.location,
             map: map,
-            title: place.name
+            title: place.name,
         });
-        var infoWindow = new google.maps.InfoWindow({
-            content: content
-        });
-
-        bindInfoWindow(marker, map, infoWindow, content);
-        marker.setMap(map);
-    }
-    }
-function bindInfoWindow(marker, map, infoWindow, html) {
-    marker.addListner('click', function(){
-        infoWindow.setContent(html);
-        infoWindow.open(map, this);
+  
+    var infowindow = new google.maps.InfoWindow({
+      content: restaurantInfo
     });
+  
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+}
+
+
+//         var marker = new google.maps.Marker({
+//             position: place.geometry.location,
+//             map: map,
+//             title: place.name,
+//         });
+//         var infoWindow = new google.maps.InfoWindow({
+//             content: restaurantInfo
+//         });
+
+//         bindInfoWindow(marker, map, infoWindow, restaurantInfo);
+//         marker.setMap(map);
+//     }
+//     }
+// function bindInfoWindow(marker, map, infoWindow, html) {
+//     console.log(marker, marker.title)
+//     setTimeout(()=> {
+//         var test = document.querySelector('[title="Lennox Cuisine"]')
+//       test.addEventListener ('click', function(){
+//         infoWindow.setContent(html);
+//         infoWindow.open(map, this);
+//     });
+//     } , 100)
+//   console.log(document)
+  
     
-}
-function createPrice(level){
-    if(level != "" && level != null){
-        let out = "";
-        for (var x = 0; x < level; x++){
-            out += "$";
-        }
-        return out;
-    } else {
-        return "?";
-    }
-}
+// }
+// function createPrice(level){
+//     if(level != "" && level != null){
+//         let out = "";
+//         for (var x = 0; x < level; x++){
+//             out += "$";
+//         }
+//         return out;
+//     } else {
+//         return "?";
+//     }var price = createPrice(place.price_level);
+// }<p>Price: ${price}<br/> 
 initmap();
