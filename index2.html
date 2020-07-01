@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpTc5kGPp1YI4pIz6-fcbaLfUpVbC6xfY&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 90%;
+        width: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      (function(exports) {
+        "use strict";
+
+/*
+        function initMap() {
+          exports.map = new google.maps.Map(document.getElementById("map"), {
+            center: {
+              lat: -34.397,
+              lng: 150.644
+            },
+            zoom: 8
+          });
+        }
+*/
+        function initMap() {
+          exports.map = new google.maps.Map(document.getElementById("map"), {
+            center: {
+              lat: 41.258980,
+              lng: -73.011750
+            },
+            zoom: 8
+          });
+        }
+
+        exports.initMap = initMap;
+      })((this.window = this.window || {}));  
+    </script>
+  </head>
+<body>
+<!--HTML BODY-->
+
+<!--NavBar START-->
+<!-- Image and text -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li><button type="button" class="btn btn-success" id="Omar" style='margin-right:16px'>Omar</button></li>
+        <li><button type="button" class="btn btn-success" id="Wayil" style='margin-right:16px'>Wayil</button></li>
+        <li><button type="button" class="btn btn-success" id="Datesta" style='margin-right:16px'>Datesta</button></li>
+        <li>
+          <script>
+            function ZoomAndCenter() {
+              map.setCenter(new google.maps.LatLng(-34.397, 150.644));
+              map.setZoom(15);
+            }
+            </script>
+            <a href="javascript:ZoomAndCenter()">Move to location</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <!--NavBar END-->
+
+
+<div id="map"></div>
+
+
+
+</body>
+</html>
