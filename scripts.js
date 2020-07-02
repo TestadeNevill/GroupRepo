@@ -68,10 +68,10 @@ $(document).ready(function() {
      
     //  =============================== Datesta's Buttons ====================================
     //Datesta's Restarants Button
-    var DatestaRestaurantButton = document.getElementById("DatestaRestarauntButton");
-    console.log(DatestaRestaruantButton);
+    var DatestaRestaurantButton = document.getElementById("DatestaRestaurantButton");
+    console.log(DatestaRestaurantButton);
     DatestaRestaurantButton.addEventListener("click", function() {
-        console.log("Datesta's Restaruants Button Clicked");
+        console.log("Datesta's Restaurants Button Clicked");
         alert("Hi you clicked Datesta's Restaraunts Button!");
         map.setCenter(new google.maps.LatLng(-41.1792, 73.1894));
         map.setZoom(15);
