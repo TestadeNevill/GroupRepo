@@ -1,5 +1,11 @@
+// Naming the 3 foundations for the app. The map itself, 
+// the circle to specify search location area and the markets 
+// that will include additional data.
 let map = null;
+var circle;
+var markers =[];
 
+// Next we call our create the map details being its location and zoom level.
 function initmap(){
     let location = new Object();
     navigator.geolocation.getCurrentPosition(function(pos){
@@ -7,83 +13,92 @@ function initmap(){
         location.long = pos.coords.longitude;
         map = new google.maps.Map(document.getElementById('map'),{
             center: {lat: location.lat, lng: location.long },
-            zoom: 15
+            zoom: 13,
         });
-        getRestaurants(location);
-    });
-}
+        // Next is the drawing a circle ability and circle style.
+        var drawingManager = new google.maps.drawing.DrawingManager({
+            drawingMode: google.maps.drawing.OverlayType.CIRCLE,
+            drawingControl: true,
+            drawingControlOptions: {
+              position: google.maps.ControlPosition.TOP_CENTER,
+              drawingModes: ['circle']
+            },
+            circleOptions: {
+                fillColor: '#ffff00',
+                fillOpacity: 0.2,
+                strokeWeight: 5,
+                strokeOpacity: 0.4,
+                clickable: false,
+                editable: true,
+                zIndex: 1
+              }
+            });
+            drawingManager.setMap(map);
+            google.maps.event.addListener(drawingManager, 'circlecomplete', onCircleComplete);
+            infowindow = new google.maps.InfoWindow();
+            var service = new google.maps.places.PlacesService(map);
 
-function getRestaurants(location) {
-    var pyrmont = new google.maps.LatLng(location.lat,location.long);
-    var request = {
-        location: pyrmont,
-        radius: 6000,
-        type: ['restaurant']
-    };
-    service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, callback);
-}
- 
-function callback (results, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-        for (var i=0; i < results.length; i++)
-        var place = results[i];
-        let restaurantInfo = `<h3>${place.name}</h3>
-        <h4> Address: ${place.vicinity} </h4>
-        <h2> Rating: ${place.rating} </h2>`;
-        
-        var marker = new google.maps.Marker({
-            position: place.geometry.location,
-            map: map,
-            title: place.name,
-        });
-  
-    var infowindow = new google.maps.InfoWindow({
-      content: restaurantInfo
-    });
-  
-    marker.addListener('click', function() {
-      infowindow.open(map, marker);
-    });
-  }
-}
-
-
-//         var marker = new google.maps.Marker({
-//             position: place.geometry.location,
-//             map: map,
-//             title: place.name,
-//         });
-//         var infoWindow = new google.maps.InfoWindow({
-//             content: restaurantInfo
-//         });
-
-//         bindInfoWindow(marker, map, infoWindow, restaurantInfo);
-//         marker.setMap(map);
-//     }
-//     }
-// function bindInfoWindow(marker, map, infoWindow, html) {
-//     console.log(marker, marker.title)
-//     setTimeout(()=> {
-//         var test = document.querySelector('[title="Lennox Cuisine"]')
-//       test.addEventListener ('click', function(){
-//         infoWindow.setContent(html);
-//         infoWindow.open(map, this);
-//     });
-//     } , 100)
-//   console.log(document)
-  
-    
-// }
-// function createPrice(level){
-//     if(level != "" && level != null){
-//         let out = "";
-//         for (var x = 0; x < level; x++){
-//             out += "$";
-//         }
-//         return out;
-//     } else {
-//         return "?";
-//     }var price = createPrice(place.price_level);
-// }<p>Price: ${price}<br/> 
-initmap();
+            function onCircleComplete(shape) {
+                if (shape == null || (!(shape instanceof google.maps.Circle))) return;
+                circle = shape;
+                google.maps.event.addListener(circle, 'radius_changed', function() {
+                  performSearch(circle);
+                });
+                google.maps.event.addListener(circle, 'center_changed', function() {
+                  performSearch(circle);
+                })
+                performSearch(circle);
+              }
+// Here we create markers for each searched resturants within 65K meters(40 Miles) of our location 
+// once we have created a circle. 
+// TO DO add any user specficed location or keyword type.
+// TO DO full distance search (Only about 20 max results appear)
+              function performSearch(shape) {
+                for (var i = 0; i < markers.length; i++) {
+                  markers[i].setMap(null);
+                }
+                markers = [];
+                var currentCity = new google.maps.LatLng(location.lat,location.long);
+                var request = {
+                  location: currentCity,
+                  radius: 65000,
+                  keyword:['restaurant']
+                };
+                service.nearbySearch(request, callback);
+              }
+            
+              function callback(results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                  for (var i = 0; i < results.length; i++) {
+                    createMarker(results[i]);
+                  }
+                }
+              }
+            
+              function createMarker(place) {
+                var placeLoc = place.geometry.location;
+                if (google.maps.geometry.spherical.computeDistanceBetween(placeLoc, circle.getCenter()) > circle.getRadius())
+                // if marker outside circle, don't add it to the map
+                  return;
+            
+                var marker = new google.maps.Marker({
+                  map: map,
+                  position: place.geometry.location,
+                  title: place.name,
+                });
+            // This event listener allows us to have location information in a clickable window.
+                google.maps.event.addListener(marker, 'click', function() {
+                  var that = this;
+                  service.getDetails({
+                    placeId: place.place_id
+                  }, function(result, status) {
+                    infowindow.setContent(result.name + "<br>" + result.formatted_address + "<br>" + result.rating);
+                    infowindow.open(map, that);
+                  });
+                });
+                markers.push(marker);
+              }
+            });
+        }
+        // Call the function.
+        initmap();
