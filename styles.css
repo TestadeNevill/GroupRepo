@@ -1,3 +1,118 @@
-.navbar1 {
-
+.navbar
+{
+    /* Example with a black tint and 0.5 opacity. */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* RGB of 0,0,0 is black. */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  W3 Schools Background Image of Elements  */
+/* https://www.w3schools.com/css/css_background_image.asp */
+/*
+body {
+    background-image: url("paper.gif");
+  }
+*/
+
+/*
+#topbar {
+  background-image: url("/assets/texture-metallique-doree-1.jpg");
+}
+*/
+
+/*
+#nav1
+/*
+{  
+    background-color:#F00; /*whichever you want*//*
+    opacity: 0.5; 
+    filter:(opacity=50);       
+}
+*/
+
+/*
+.bgcolor {
+    background-image: url("/assets/texture-metallique-doree-1.jpg") !important;
+    background-repeat: repeat-x;
+  }
+  
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      padding-top: 20px;
+    }
+  }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+#topbar {
+    background-image: url("./assets/texture-metallique-doree-1.jpg");
+  }
+*/
+
+/*
+#navigation,.navbar .navbar-default .navbar-dark{
+    background-image: url("/assets/texture-metallique-doree-1.jpg");
+  }
+*/
+
+/* CSS used here will be applied after bootstrap.css */
+/*
+#navigation,.navbar .navbar-default{
+	border-top: 2px dotted blue;
+	border-bottom: 2px dotted blue;
+	background-color: lavender;
+	background-repeat: repeat-x;
+	background-size: cover;
+	background-image: url("http://upload.wikimedia.org/wikipedia/commons/6/6b/Bubble_3.jpg");
+ 
+	background: url('http://upload.wikimedia.org/wikipedia/commons/6/6b/Bubble_3.jpg');
+
+	font-style: zapfino;
+}
+*/

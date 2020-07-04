@@ -52,9 +52,8 @@
             zoom: 8
           });
         }
-
         exports.initMap = initMap;
-      })((this.window = this.window || {}));  
+      })((this.window = this.window || {}));
     </script>
   </head>
 <body>
@@ -62,24 +61,63 @@
 
 <!--NavBar START-->
 <!-- Image and text -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+<!--<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3a1d8a;">-->
+  <div style="background-image: url('assets\texture-metallique-doree-1.jpg');">
+  <nav class="navbar navbar-expand-lg transparent" id="nav1" style="background-image: url('assets/texture-metallique-doree-1.jpg');">
+    <a class="navbar-brand" href="#">Project D.O.W</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <!--NavBar Buttions Start-->
-        <li><button type="button" class="btn btn-success" id="Omar" style='margin-right:16px'>Omar</button></li>
-        <li><button type="button" class="btn btn-success" id="Wayil" style='margin-right:16px'>Wayil</button></li>
-        <li><button type="button" class="btn btn-success" id="Datesta" style='margin-right:16px'>Datesta</button></li>
+
         <li>
-          <!--For Debugging Only Comment out.-->
+          <div class="container">
+            <div class="dropdown">
+               <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                 Omar
+               </button>
+               <div class="dropdown-menu">
+                 <h5 class="dropdown-header">Omars's Favorite Places</h5>
+                 <a class="dropdown-item" href="#" id="OmarRestaurantButton">Omars's Favorite Restaurants</a>
+                 <a class="dropdown-item" href="#" id="OmarParkButton">Omar's Favorite Parks</a>
+                 <a class="dropdown-item" href="#" id="OmarStoreButton">Omar's Favorite Stores</a>
+               </div>
+             </div>
+        </li>
+        <li>
+          <div class="container">
+            <div class="dropdown">
+               <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                 Wayil's
+               </button>
+               <div class="dropdown-menu">
+                 <h5 class="dropdown-header">Wayil's Favorite Places</h5>
+                 <a class="dropdown-item" href="#" id="WayilRestaurantButton">Wayil's Favorite Restaurants</a>
+                 <a class="dropdown-item" href="#" id="WayilParkButton">Wayil's Favorite Parks</a>
+                 <a class="dropdown-item" href="#" id="WayilStoreButton">Wayil's Favorite Stores</a>
+               </div>
+             </div>
+        </li>
+        <li>
+          <div class="container">
+            <div class="dropdown">
+               <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                 Datesta
+               </button>
+               <div class="dropdown-menu">
+                 <h5 class="dropdown-header">Datesta's Favorite Places</h5>
+                 <a class="dropdown-item" href="#" id="DatestaRestaurantButton">Datesta's Favorite Restaurants</a>
+                 <a class="dropdown-item" href="#" id="DatestaParkButton">Datesta's Favorite Parks</a>
+                 <a class="dropdown-item" href="#" id="DatestaStoreButton">Datesta's Favorite Stores</a>
+               </div>
+             </div>
+        </li>
           <script>
             /*
             function ZoomAndCenter() {
-              map.setCenter(new google.maps.LatLng(-34.397, 150.644));
+              map.setCenter(new google.maps.LatLng(41.599998, -72.699997));
               map.setZoom(15);
             }
             */
@@ -99,11 +137,14 @@
       <!--Search Bar END-->
     </div>
   </nav>
+  </div>
   <!--NavBar END-->
 
 <!--The Map Itself-->
 <div id="map"></div>
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
 </body>
