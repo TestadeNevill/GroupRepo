@@ -97,3 +97,6 @@ $(document).ready(function() {
         map.setZoom(15);
     });
 });
+
+//HTML DOM
+//onclick="myFunction()"
