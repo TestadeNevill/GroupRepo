@@ -3,12 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <style>
             #map {
-            height: 100%;
+            height: 90%;
+            width: 100%
             }
 
             html, body {
@@ -19,35 +19,99 @@
         </style>
     </head>
     <body>
+<!--HTML BODY-->
+<!--Do not move or change the script tags! It could break the page!-->
+<script src="scripts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="Hungry.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCqtzijUNESG2nMCLPsQpeKqZsmSqpKkY&libraries=geometry,places,drawing"></script>
 <!--NavBar START-->
 <!-- Image and text -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<!--<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3a1d8a;">-->
+  <div style="background-image: url('assets\texture-metallique-doree-1.jpg');">
+    <nav class="navbar navbar-expand-lg transparent" id="nav1" style="background-image: url('assets/texture-metallique-doree-1.jpg');">
+      <a class="navbar-brand" href="#">Project D.O.W</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
   
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li><button type="button" class="btn btn-success" id="Omar" onclick="myFunction()" style='margin-right:16px'>Omar</button></li>
-        <li><button type="button" class="btn btn-success" id="Wayil" onclick="myFunction()" style='margin-right:16px'>Wayil</button></li>
-        <li><button type="button" class="btn btn-success" id="Datesta" onclick="myFunction()" style='margin-right:16px'>Datesta</button></li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+  
+          <li>
+            <div class="container">
+              <div class="dropdown">
+                 <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                   Omar
+                 </button>
+                 <div class="dropdown-menu">
+                   <h5 class="dropdown-header">Omars's Favorite Places</h5>
+                   <a class="dropdown-item" href="#" id="OmarRestaurantButton">Omars's Favorite Restaurants</a>
+                   <a class="dropdown-item" href="#" id="OmarParkButton">Omar's Favorite Parks</a>
+                   <a class="dropdown-item" href="#" id="OmarStoreButton">Omar's Favorite Stores</a>
+                 </div>
+               </div>
+          </li>
+          <li>
+            <div class="container">
+              <div class="dropdown">
+                 <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                   Wayil's
+                 </button>
+                 <div class="dropdown-menu">
+                   <h5 class="dropdown-header">Wayil's Favorite Places</h5>
+                   <a class="dropdown-item" href="#" id="WayilRestaurantButton">Wayil's Favorite Restaurants</a>
+                   <a class="dropdown-item" href="#" id="WayilParkButton">Wayil's Favorite Parks</a>
+                   <a class="dropdown-item" href="#" id="WayilStoreButton">Wayil's Favorite Stores</a>
+                 </div>
+               </div>
+          </li>
+          <li>
+            <div class="container">
+              <div class="dropdown">
+                 <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                   Datesta
+                 </button>
+                 <div class="dropdown-menu">
+                   <h5 class="dropdown-header">Datesta's Favorite Places</h5>
+                   <a class="dropdown-item" href="#" id="DatestaRestaurantButton">Datesta's Favorite Restaurants</a>
+                   <a class="dropdown-item" href="#" id="DatestaParkButton">Datesta's Favorite Parks</a>
+                   <a class="dropdown-item" href="#" id="DatestaStoreButton">Datesta's Favorite Stores</a>
+                 </div>
+               </div>
+          </li>
+            <script>
+              /*
+              function ZoomAndCenter() {
+                map.setCenter(new google.maps.LatLng(41.599998, -72.699997));
+                map.setZoom(15);
+              }
+              */
+              </script>
+              <!--DEBUG BUTTON-->
+              <!--<a href="javascript:ZoomAndCenter()">Move to location</a>-->
+          </li>
+          <!--Add more here in the future-->
+          <!--Dynamic Text Title-->
+          <h2 id="dynamic-title">Favorite Spots!</h2>
+        </ul>
+        <!--Search Bar START-->
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <!--Search Bar END-->
+      </div>
+    </nav>
     </div>
-  </nav>
-  <!--NavBar END-->
+<!--NavBar END-->
 
-    <!--Map Div-->
-        <div id="map"></div>
-        <script src="Hungry.js"></script>
-        <script src="scripts.js"></script>
-      
+<!--Map Div-->
+  <div id="map"></div>
+
         
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCqtzijUNESG2nMCLPsQpeKqZsmSqpKkY&libraries=geometry,places,drawing"></script>
         <!-- <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpTc5kGPp1YI4pIz6-fcbaLfUpVbC6xfY&callback=initMap">
 </script>    -->

@@ -11,8 +11,9 @@ $(document).ready(function() {
     OmarRestaurantButton.addEventListener("click", function() {
         console.log("Omar's Restaurant Button Clicked!");
         alert("Hi you clicked Omar's Restaurant Button!");
-        map.setCenter(new google.maps.LatLng(41.0382745, -73.5464977));
-        map.setZoom(15);
+        map.setCenter(new google.maps.LatLng(41.1034086, -73.550749));
+        //Set to Laylas Falafael
+        map.setZoom(17);
     });  
 
     //Omars Park Button
@@ -22,6 +23,7 @@ $(document).ready(function() {
         console.log("Omar's Park Button Clicked Button Clicked");
         alert("Hi you clicked Omar's Park Button!");
         map.setCenter(new google.maps.LatLng(41.0382745, -73.5464977));
+        //Set to Harbour Point
         map.setZoom(15);
     });  
 
@@ -31,7 +33,8 @@ $(document).ready(function() {
     OmarStoreButton.addEventListener("click", function() {
         console.log("Omar's Store Button Clicked!");
         alert("Hi you clicked Omar's Store Button!");
-        map.setCenter(new google.maps.LatLng(41.0382745, -73.5464977));
+        map.setCenter(new google.maps.LatLng(41.0996123, -73.4387004));
+        //Set to Best Buy
         map.setZoom(15);
     });  
    
@@ -62,8 +65,9 @@ $(document).ready(function() {
     WayilStoreButton.addEventListener("click", function() {
         console.log("Wayil Store Button Clicked");
         alert("Hi you clicked Wayil's Stores Button!");
-        map.setCenter(new google.maps.LatLng(-34.397, 150.644));
-        map.setZoom(15);
+        map.setCenter(new google.maps.LatLng(41.1058578, -73.4211049));
+        //Set to The Sono Collection
+        map.setZoom(17);
     });
      
     //  =============================== Datesta's Buttons ====================================
@@ -73,8 +77,9 @@ $(document).ready(function() {
     DatestaRestaurantButton.addEventListener("click", function() {
         console.log("Datesta's Restaurants Button Clicked");
         alert("Hi you clicked Datesta's Restaraunts Button!");
-        map.setCenter(new google.maps.LatLng(-41.1792, 73.1894));
-        map.setZoom(15);
+        map.setCenter(new google.maps.LatLng(41.2010458, -73.1859727));
+        //Set to Tomlinson's Restaurant
+        map.setZoom(16);
     });
 
     //Datesta's Parks Button
@@ -82,9 +87,10 @@ $(document).ready(function() {
     console.log(DatestaParkButton);
     DatestaParkButton.addEventListener("click", function() {
         console.log("Datesta's Parks Button Clicked");
-        alert("Hi you clicked Datesta's Parks Button!");
-        map.setCenter(new google.maps.LatLng(-41.1792, 73.1894));
-        map.setZoom(15);
+        alert("Hi you clicked Datesta's Parks Button!");       
+        map.setCenter(new google.maps.LatLng(41.2112394, -73.1861488));
+        //Beardsly Park
+        map.setZoom(17);
     });
 
     //Datesta's Stores Button
@@ -93,7 +99,15 @@ $(document).ready(function() {
     DatestaStoreButton.addEventListener("click", function() {
         console.log("Datesta's Stores Button Clicked");
         alert("Hi you clicked Datesta's Stores Button!");
-        map.setCenter(new google.maps.LatLng(-41.1792, 73.1894));
+        map.setCenter(new google.maps.LatLng(41.1953766, -73.1444237));
+        //Walgreens
         map.setZoom(15);
     });
 });
+
+//Saved Places Please don't delete.
+
+//Map zoom 16,15,16 Resaurants Parks Stores (rand-o-d)
+//map.setCenter(new google.maps.LatLng(41.218494, -73.2170345)); //Set to Bow Tie Cinemas Theature
+//map.setCenter(new google.maps.LatLng(41.1589855, -73.16788859)); //Set to Island near Bridgeport
+//map.setCenter(new google.maps.LatLng(41.230046, -73.187542)); //Set to Restaurant Shopping Center
