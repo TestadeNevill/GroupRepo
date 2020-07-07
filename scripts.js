@@ -24,7 +24,7 @@ $(document).ready(function() {
         alert("Hi you clicked Omar's Park Button!");
         map.setCenter(new google.maps.LatLng(41.0382745, -73.5464977));
         //Set to Harbour Point
-        map.setZoom(15);
+        map.setZoom(17);
     });  
 
     //Omars Store Button
@@ -35,7 +35,7 @@ $(document).ready(function() {
         alert("Hi you clicked Omar's Store Button!");
         map.setCenter(new google.maps.LatLng(41.0996123, -73.4387004));
         //Set to Best Buy
-        map.setZoom(15);
+        map.setZoom(17);
     });  
    
     //  ================================ Wayils Buttons ======================================
@@ -45,8 +45,8 @@ $(document).ready(function() {
     WayilRestaurantButton.addEventListener("click", function() {
         console.log("Wayil's Restaraunt Button Clicked");
         alert("Hi you clicked Wayil's Restaurants Button!");
-        map.setCenter(new google.maps.LatLng(41.308182,-72.931252);
-        map.setZoom(15);
+        map.setCenter(new google.maps.LatLng(41.308182,-72.931252));
+        map.setZoom(17);
     });
 
     //Wayils Parks Button
@@ -56,7 +56,7 @@ $(document).ready(function() {
         console.log("Wayil's Parks Button Clicked");
         alert("Hi you clicked Wayil's Parks Button!");
         map.setCenter(new google.maps.LatLng(41.420620, -72.899360));
-        map.setZoom(15);
+        map.setZoom(17);
     });
     
     //Wayils Stores Button
@@ -79,7 +79,7 @@ $(document).ready(function() {
         alert("Hi you clicked Datesta's Restaraunts Button!");
         map.setCenter(new google.maps.LatLng(41.2010458, -73.1859727));
         //Set to Tomlinson's Restaurant
-        map.setZoom(16);
+        map.setZoom(17);
     });
 
     //Datesta's Parks Button
@@ -101,7 +101,7 @@ $(document).ready(function() {
         alert("Hi you clicked Datesta's Stores Button!");
         map.setCenter(new google.maps.LatLng(41.1953766, -73.1444237));
         //Walgreens
-        map.setZoom(15);
+        map.setZoom(17);
     });
 });
 
