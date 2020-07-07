@@ -45,7 +45,7 @@ $(document).ready(function() {
     WayilRestaurantButton.addEventListener("click", function() {
         console.log("Wayil's Restaraunt Button Clicked");
         alert("Hi you clicked Wayil's Restaurants Button!");
-        map.setCenter(new google.maps.LatLng(41.308182,-72.931252);
+        map.setCenter(new google.maps.LatLng(41.308182, -72.931252));
         map.setZoom(15);
     });
 
