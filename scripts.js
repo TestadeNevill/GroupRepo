@@ -48,7 +48,11 @@ $(document).ready(function() {
     WayilParkButton.addEventListener("click", function() {
         console.log("Wayil's Parks Button Clicked");
         alert("Hi you clicked Wayil's Parks Button!");
+<<<<<<< Updated upstream
         map.setCenter(new google.maps.LatLng(41.420620,-72.899360));
+=======
+        map.setCenter(new google.maps.LatLng(41.420620, -72.899360);
+>>>>>>> Stashed changes
         map.setZoom(15);
     });
     
