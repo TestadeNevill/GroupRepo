@@ -45,7 +45,7 @@ $(document).ready(function() {
     WayilRestaurantButton.addEventListener("click", function() {
         console.log("Wayil's Restaraunt Button Clicked");
         alert("Hi you clicked Wayil's Restaurants Button!");
-        map.setCenter(new google.maps.LatLng(41.308182, -72.931252));
+        map.setCenter(new google.maps.LatLng(-34.397, 150.644));
         map.setZoom(15);
     });
 
@@ -55,7 +55,7 @@ $(document).ready(function() {
     WayilParkButton.addEventListener("click", function() {
         console.log("Wayil's Parks Button Clicked");
         alert("Hi you clicked Wayil's Parks Button!");
-        map.setCenter(new google.maps.LatLng(41.420620, -72.899360));
+        map.setCenter(new google.maps.LatLng(-34.397, 150.644));
         map.setZoom(15);
     });
     
@@ -65,7 +65,7 @@ $(document).ready(function() {
     WayilStoreButton.addEventListener("click", function() {
         console.log("Wayil Store Button Clicked");
         alert("Hi you clicked Wayil's Stores Button!");
-        map.setCenter(new google.maps.LatLng(41.311460, -72.930750));
+        map.setCenter(new google.maps.LatLng(41.1058578, -73.4211049));
         //Set to The Sono Collection
         map.setZoom(17);
     });
