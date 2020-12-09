@@ -26,4 +26,16 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
+
+  //More routes
+
+  //Map Routes
+  app.get("/dow-favorites-map", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/dow-favorites-map.html"));
+  });
+
+  app.get("/find-places-map", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
+  });
+
 };
