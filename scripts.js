@@ -65,7 +65,7 @@ $(document).ready(function() {
     WayilStoreButton.addEventListener("click", function() {
         console.log("Wayil Store Button Clicked");
         alert("Hi you clicked Wayil's Stores Button!");
-        map.setCenter(new google.maps.LatLng(41.311460, -72.930750));
+        map.setCenter(new google.maps.LatLng(41.311460 , -72.930750));
         //Set to The Sono Collection
         map.setZoom(17);
     });
