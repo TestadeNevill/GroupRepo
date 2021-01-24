@@ -45,8 +45,13 @@ $(document).ready(function() {
     WayilRestaurantButton.addEventListener("click", function() {
         console.log("Wayil's Restaraunt Button Clicked");
         alert("Hi you clicked Wayil's Restaurants Button!");
+<<<<<<< HEAD:scripts.js
         map.setCenter(new google.maps.LatLng(41.308182,-72.931252));
         map.setZoom(17);
+=======
+        map.setCenter(new google.maps.LatLng(-34.397, 150.644));
+        map.setZoom(15);
+>>>>>>> 2a601d766d442c85c8ce6dc1069047d476541424:public/scripts.js
     });
 
     //Wayils Parks Button
@@ -55,8 +60,13 @@ $(document).ready(function() {
     WayilParkButton.addEventListener("click", function() {
         console.log("Wayil's Parks Button Clicked");
         alert("Hi you clicked Wayil's Parks Button!");
+<<<<<<< HEAD:scripts.js
         map.setCenter(new google.maps.LatLng(41.420620, -72.899360));
         map.setZoom(17);
+=======
+        map.setCenter(new google.maps.LatLng(-34.397, 150.644));
+        map.setZoom(15);
+>>>>>>> 2a601d766d442c85c8ce6dc1069047d476541424:public/scripts.js
     });
     
     //Wayils Stores Button
@@ -65,7 +75,11 @@ $(document).ready(function() {
     WayilStoreButton.addEventListener("click", function() {
         console.log("Wayil Store Button Clicked");
         alert("Hi you clicked Wayil's Stores Button!");
+<<<<<<< HEAD:scripts.js
         map.setCenter(new google.maps.LatLng(41.311460 , -72.930750));
+=======
+        map.setCenter(new google.maps.LatLng(41.1058578, -73.4211049));
+>>>>>>> 2a601d766d442c85c8ce6dc1069047d476541424:public/scripts.js
         //Set to The Sono Collection
         map.setZoom(17);
     });
